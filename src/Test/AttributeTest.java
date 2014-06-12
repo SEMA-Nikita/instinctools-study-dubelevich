@@ -1,5 +1,6 @@
 package Test;
 
+// TODO убрать неиспользуемые import
 import java.util.concurrent.TimeUnit;
 
 import org.junit.After;
@@ -21,7 +22,8 @@ public class AttributeTest {
 	 @Before
 	 public void setup()
 		{
-			driver= new FirefoxDriver();
+		 // TODO убрать driver из тестов на уровень pages (смотри мой пример) 
+		 driver= new FirefoxDriver();
 			driver.get("http://192.168.93.211:8081/sd/");
 			
 			LoginPage loginPage = new LoginPage(driver);
@@ -34,9 +36,11 @@ public class AttributeTest {
 	 @Test
 	 public void test()
 	 {
+		 // TODO HomePage, TeamPage, CreateTeamPage - как поле класса
 		 HomePage homePage = new HomePage(driver);
 		 homePage.getTeam();
 		 TeamPage teamPage = new TeamPage(driver);
+		 // TODO Убрать static
 		 teamPage.getTeam ();
 		 CreateTeamPage createTeamPage = new CreateTeamPage(driver);
 		 createTeamPage.create( );
