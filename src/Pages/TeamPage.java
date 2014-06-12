@@ -21,7 +21,7 @@ public class TeamPage extends AbstractPage {
 	private static WebElement TeamElement;	
 	
 	
-	public static CreateTeamPage getTeam ()
+	public  CreateTeamPage getTeam ()
 	{
 		addbuttonElement.click();
 		return new CreateTeamPage(driver);

@@ -31,7 +31,7 @@ private static WebElement errorElement;
 @FindBy(id="usernameLabel")
 private  WebElement inputElement;
 
-public static  HomePage  login(String login, String password)
+public   HomePage  login(String login, String password)
 {
 	loginElement.sendKeys(login);
 	passwordElement.sendKeys(password);

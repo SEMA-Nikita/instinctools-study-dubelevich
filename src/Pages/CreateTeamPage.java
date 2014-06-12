@@ -22,7 +22,7 @@ public class CreateTeamPage extends AbstractPage {
 	@FindBy(xpath=".//*[@id='gwt-debug-apply']")
 	private static WebElement cretebutElement;
 	
-	public static TeamPage create( ) 
+	public  TeamPage create( ) 
 	{
 		kodElement.sendKeys("znachenie");
 		nameElement.sendKeys("znachenie");
