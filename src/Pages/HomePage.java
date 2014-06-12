@@ -19,7 +19,7 @@ public class HomePage extends AbstractPage
 	private static WebElement teamElement;
 	
 
-	public static TeamPage getTeam ()
+	public TeamPage getTeam ()
 	{
 		teamElement.click();
 		return new TeamPage(driver);

@@ -35,7 +35,7 @@ public class AttributeTest {
 	 public void test()
 	 {
 		 HomePage homePage = new HomePage(driver);
-		 homePage.getTeam ();
+		 homePage.getTeam();
 		 TeamPage teamPage = new TeamPage(driver);
 		 teamPage.getTeam ();
 		 CreateTeamPage createTeamPage = new CreateTeamPage(driver);

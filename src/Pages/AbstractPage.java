@@ -16,7 +16,7 @@ public class AbstractPage {
 	@FindBy (id="gwt-debug-logout")
 	private static WebElement logoutElement;
 	
-	public static LoginPage logout ()
+	public LoginPage logout ()
 	{
 		logoutElement.click();
 		return new LoginPage(driver);
