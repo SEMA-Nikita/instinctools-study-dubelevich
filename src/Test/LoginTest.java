@@ -7,32 +7,31 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+
+import Pages.HomePage;
 import Pages.LoginPage;
 
 
-public class LoginTest 
+public class LoginTest extends AbstractTest
 {
-  private static WebDriver driver;
  private LoginPage loginPage;
+ private HomePage homePage;
+ private String login = "naumen";
+ private String password = "n@usd40";
  
-  
-	@Before
-	public void setup()
-	{
-		// TODO убрать driver из тестов на уровень pages (смотри мой пример) 
-		driver= new FirefoxDriver();
-		driver.get("http://192.168.93.211:8081/sd/");
-	}
-	
+ @Before
+ public void setup ()
+ {
+	 super.Init();
+ }
+
 	@Test
 	public void testValidLoginLogout ()
 	{
-		loginPage= new LoginPage(driver);
-		loginPage.login("naumen", "n@usd40");
+		loginPage = new LoginPage(driver);
+		homePage = loginPage.login(login, password);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		Assert.assertTrue(driver.getTitle().toLowerCase().startsWith("naumen"));
+		homePage.assertSigIn(login);
 		
 	}
 	
@@ -46,9 +45,9 @@ public class LoginTest
 	}
 	
 	@After
-	public void tearDown()
+	public void clousebrouser()
 	{
-		driver.quit();
+		super.clouse();
 	}
 }
 

@@ -5,31 +5,28 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage 
+public class LoginPage extends AbstractPage
 {
-	private static WebDriver driver;
-	
 	public LoginPage(WebDriver driver)
 	{
-		LoginPage.driver = driver;
+		super(driver);
 		PageFactory.initElements(driver, this);
-		
 	}
 	
 @FindBy(id="username")
-private static WebElement loginElement;
+private WebElement loginElement;
 
 @FindBy(id="password")
-private static WebElement passwordElement;
+private WebElement passwordElement;
 
 @FindBy(css=".submit-button")
-private static WebElement submitElement;
+private WebElement submitElement;
 
 @FindBy(id="errorMessage")
-private static WebElement errorElement;
+private WebElement errorElement;
 
 @FindBy(id="usernameLabel")
-private  WebElement inputElement;
+private WebElement inputElement;
 
 public   HomePage  login(String login, String password)
 {

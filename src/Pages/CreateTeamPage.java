@@ -6,11 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class CreateTeamPage extends AbstractPage {
-	private static WebDriver driver;
+
 	public CreateTeamPage(WebDriver driver)
 	{
 		super(driver);
-		CreateTeamPage.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
 	@FindBy(xpath=".//*[@id='gwt-debug-code-value']")
