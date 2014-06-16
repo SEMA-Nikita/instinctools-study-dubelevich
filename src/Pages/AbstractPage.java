@@ -22,15 +22,25 @@ public class AbstractPage {
 	@FindBy (id="gwt-debug-editProfile")
 	private WebElement signinUserName;
 	
+	@FindBy (id="gwt-debug-switchInterface")
+	private WebElement swichInterface;
+	
+	
 	public LoginPage logout ()
 	{
 		logoutElement.click();
 		return new LoginPage(driver);
 	}
 
-	public void assertSigIn(String expectedUserName) 
+	public void assertSignIn(String expectedUserName) 
 	{
 	    Assert.assertEquals(expectedUserName, signinUserName.getText());
+	}
+	
+	public Company swich()
+	{
+		swichInterface.click();
+		return new Company(driver);
 	}
 
 }

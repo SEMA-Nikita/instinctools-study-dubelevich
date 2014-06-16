@@ -31,14 +31,13 @@ public class LoginTest extends AbstractTest
 		loginPage = new LoginPage(driver);
 		homePage = loginPage.login(login, password);
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		homePage.assertSigIn(login);
+		homePage.assertSignIn(login);
 		
 	}
 	
 	@Test
 	public void testInvalidLgin()
 	{
-		
 		loginPage= new LoginPage(driver);
 		loginPage.login("naumen", "n@usd40hj");
 		 Assert.assertTrue(loginPage.getErrorMessage().equals("���������� ����� � �������. ������������ ��� ������������ �/��� ������. ���������� ��������� ����."));
